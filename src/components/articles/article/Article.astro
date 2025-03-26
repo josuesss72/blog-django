@@ -1,0 +1,21 @@
+---
+const { article } = Astro.props;
+---
+
+<article
+	class="text-white text-sm flex flex-col gap-4 border-b-2 border-gray-600 p-2 mt-4"
+>
+	<header class="flex flex-col gap-2">
+		<span class="bg-gray-600 p-1 mr-auto uppercase font-light rounded-sm"
+			>{article.issue}</span
+		>
+		<h4 class="text-base">{article.title}</h4>
+	</header>
+	<main>
+		<p class="font-light">{article.content}</p>
+	</main>
+	<footer class="flex justify-between">
+		<a class=`text-[var(--primary-color)] font-bold` href="">Leer mas</a>
+		<p>{article.timeView}</p>
+	</footer>
+</article>

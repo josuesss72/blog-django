@@ -1,0 +1,45 @@
+---
+const { title = "Mundo Django" } = Astro.props;
+---
+
+<header
+	class="max-w-[900px] mx-auto flex text-white justify-between items-center p-2 relative"
+>
+	<article class="flex items-center">
+		<img src="/logo.png" class="w-10" alt="" />
+		<h1 class="text-xl">{title}</h1>
+	</article>
+	<button id="menu-btn" class="cursor-pointer text-2xl sm:hidden">☰</button>
+	<ul
+		id="mobile-menu"
+		class="hidden absolute top-0 right-0 h-screen px-8 py-12 bg-gray-800 text-sm sm:flex sm:h-auto sm:p-0 sm:bg-transparent sm:static sm:gap-4"
+	>
+		<li
+			id="btn-close"
+			class="font-bold cursor-pointer absolute top-4 right-4 text-xl sm:hidden"
+		>
+			X
+		</li>
+		<li class="cursor-pointer hover:text-[#44b78b] pb-2 sm:p-0">Articulos</li>
+		<li class="cursor-pointer hover:text-[#44b78b] pb-2 sm:p-0">
+			Proyectos Django
+		</li>
+		<li class="cursor-pointer hover:text-[#44b78b] pb-2 sm:p-0">Libros</li>
+		<li class="cursor-pointer hover:text-[#44b78b] pb-2 sm:p-0">Podcasts</li>
+		<li class="cursor-pointer hover:text-[#44b78b] pb-2 sm:p-0">Cursos</li>
+	</ul>
+</header>
+
+<script>
+	const menuBtn = document.getElementById("menu-btn");
+	const menu = document.getElementById("mobile-menu");
+	const btnClose = document.getElementById("btn-close");
+
+	menuBtn.addEventListener("click", () => {
+		menu.classList.toggle("hidden");
+	});
+
+	btnClose?.addEventListener("click", () => {
+		menu.classList.toggle("hidden");
+	});
+</script>
